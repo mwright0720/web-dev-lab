@@ -1,9 +1,10 @@
 
-import HeaderCard from './components/HeaderCard';
-import BodyCard from './components/BodyCard';
-import './App.css'
+import HeaderCard from '../components/HeaderCard';
+import BodyCard from '../components/BodyCard';
+import { NavLink } from "react-router";
+import '../App.css'
 
-function App() {
+function HomePage() {
   
 
   return (
@@ -11,7 +12,7 @@ function App() {
       
       <div className='shrink-0 space-x-4 flex flex-1 flex-row gap-1 justify-evenly bg-slate-800 text-stone-200 flex-auto container border border-zinc-300'>
         <HeaderCard title="Home"/>
-        <HeaderCard title="Project 1"/>
+        <nav> <NavLink to = "Proj1Home"><HeaderCard title="Project 1"/></NavLink></nav>
         <HeaderCard title="Project 2"/>
         <HeaderCard title="Project 3"/>
         <HeaderCard title="Project 4"/>
@@ -25,4 +26,4 @@ function App() {
   )
 }
 
-export default App
+export default HomePage
