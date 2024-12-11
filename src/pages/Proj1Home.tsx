@@ -2,6 +2,9 @@ import { NavLink } from "react-router";
 import ImageCard from "../components/ImageCard";
 
 export default function Proj1Home() {
+
+  
+  
   return (
     <div className="bg-indigo-400 h-screen flex flex-col">
 
