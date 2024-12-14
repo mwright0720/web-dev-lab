@@ -13,6 +13,7 @@ export default function ImageCard({ cardIndex, name, image }: Props) {
   const initialX = (cardIndex! * 300);
   const initialY = 211;
   const [position, setPosition] = useState<number[]>([initialX, initialY]);
+  const [offset, setOffset] = useState<number[]>([0,0]);
 
   useEffect(() => {
     // This function will run only once when the component mounts
@@ -35,8 +36,11 @@ export default function ImageCard({ cardIndex, name, image }: Props) {
     console.log(position);
   }, [position]);
   
-  const handleDragStart = () => {
+  const handleDragStart: DragEventHandler<HTMLDivElement> = (
+    e: React.DragEvent<HTMLDivElement>
+  ) => {
     console.log("Dragging has been started");
+    setOffset([e.nativeEvent.offsetX, e.nativeEvent.offsetY + 84]);
   };
 
   const handleDragEnd: DragEventHandler<HTMLDivElement> = (
@@ -45,7 +49,8 @@ export default function ImageCard({ cardIndex, name, image }: Props) {
     console.log("Drag end");
     const newX = e.clientX;
     const newY = e.clientY;
-    setPosition([newX, newY]);
+    console.log(newX, newY);
+    setPosition([newX - offset[0], newY - offset[1]]);
   };
 
 
