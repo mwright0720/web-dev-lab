@@ -22,7 +22,6 @@ export default function ImageCard({ cardIndex, name, image }: Props) {
       const boundingBox = divRef.current.getBoundingClientRect();
 
 
-      //console.log(boundingBox);
 
 
       
@@ -39,14 +38,14 @@ export default function ImageCard({ cardIndex, name, image }: Props) {
   const handleDragStart: DragEventHandler<HTMLDivElement> = (
     e: React.DragEvent<HTMLDivElement>
   ) => {
-    console.log("Dragging has been started");
+    
     setOffset([e.nativeEvent.offsetX, e.nativeEvent.offsetY + 84]);
   };
 
   const handleDragEnd: DragEventHandler<HTMLDivElement> = (
     e: React.DragEvent<HTMLDivElement>
   ) => {
-    console.log("Drag end");
+    
     const newX = e.clientX;
     const newY = e.clientY;
     console.log(newX, newY);

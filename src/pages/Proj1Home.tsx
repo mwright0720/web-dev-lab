@@ -1,5 +1,4 @@
 import { NavLink } from "react-router";
-import { useRef, useEffect } from "react";
 import ImageCard from "../components/ImageCard";
 
 export default function Proj1Home() {
