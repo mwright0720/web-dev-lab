@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import ToggleImage from "../components/ToggleImage";
 
 export default function Proj2Home() {
   return (
@@ -13,42 +14,56 @@ export default function Proj2Home() {
         className="border border-red-600 table-auto border-separate"
       >
         <tr id="guard" className="flex border border-blue-200 bg-zinc-600">
-          <th scope="row" className="text-3xl">Guard</th>
-      
-        <td className="p-3">Guard content</td>
-        <td className="p-3">Guard content</td>
+          <th scope="row" className="text-3xl">
+            Guard
+          </th>
+
+          <td className="p-3">
+            <ToggleImage image="../src/assets/croque.png" />
+          </td>
+          <td className="p-3">Guard content</td>
         </tr>
 
         <tr id="medic" className="flex border border-blue-200 bg-zinc-600">
-          <th scope="row" className="text-3xl">Medic</th>
-      
-        <td className="p-3">Medic content</td>
-        <td className="p-3">Medic content</td>
+          <th scope="row" className="text-3xl">
+            Medic
+          </th>
+
+          <td className="p-3">Medic content</td>
+          <td className="p-3">Medic content</td>
         </tr>
 
         <tr id="sniper" className="flex border border-blue-200 bg-zinc-600">
-          <th scope="row" className="text-3xl">Sniper</th>
-      
-        <td className="p-3">Sniper content</td>
-        <td className="p-3">Sniper content</td>
+          <th scope="row" className="text-3xl">
+            Sniper
+          </th>
+
+          <td className="p-3">Sniper content</td>
+          <td className="p-3">Sniper content</td>
         </tr>
 
         <tr id="specialist" className="flex border border-blue-200 bg-zinc-600">
-          <th scope="row" className="text-3xl">Specialist</th>
-      
-        <td className="p-3">Specialist content</td>
-        <td className="p-3">Specialist content</td>
+          <th scope="row" className="text-3xl">
+            Specialist
+          </th>
+
+          <td className="p-3">Specialist content</td>
+          <td className="p-3">Specialist content</td>
         </tr>
 
         <tr id="warrior" className="flex border border-blue-200 bg-zinc-600">
-          <th scope="row" className="text-3xl">Warrior</th>
-      
-        <td className="p-3">Warrior content</td>
-        <td className="p-3">Warrior content</td>
+          <th scope="row" className="text-3xl">
+            Warrior
+          </th>
+
+          <td className="p-3">Warrior content</td>
+          <td className="p-3">Warrior content</td>
         </tr>
       </table>
 
-      <p className="text-5xl text-center">You have X medic, Y warrior, Z sniper, A specialist in team</p>
+      <p className="text-5xl text-center">
+        You have X medic, Y warrior, Z sniper, A specialist in team
+      </p>
       <div className="flex border gap-2 p-2 border-red-800 bg-zinc-800">
         <div>Team member 1</div>
         <div>Team member 2</div>
