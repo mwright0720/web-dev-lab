@@ -1,7 +1,36 @@
 import { NavLink } from "react-router";
 import ToggleImage from "../components/ToggleImage";
+import { useState } from "react";
+import * as doll from "../utils/GFLPNCData.tsx"
 
 export default function Proj2Home() {
+  type Doll = {id: number, image: string, role: string, active: boolean}
+  const [toggledState, setToggledState] = useState<Doll[]>([doll.croque, doll.souchun, doll.millau]);
+
+  const handleToggle = (id: number) => {
+    setToggledState(prevState => prevState.map (
+      character => character.id === id ? {...character, active: !character.active} : character
+    ))
+
+  }
+  const guardContent = [
+    doll.croque,
+    doll.souchun,
+    doll.millau,
+  ];
+
+
+   const guardItems = guardContent.map((character) => (
+      <td className="p-3" key={character.id}>
+        <ToggleImage
+          image={character.image}
+          role={character.role}
+          toggle={toggledState.find((doll) => doll.id === character.id)?.active || false}
+          onClick={() => handleToggle(character.id)}
+        />
+      </td>
+    ));
+
   return (
     <div className="flex flex-col h-screen bg-red-100 gap-14">
       <nav className="bg-slate-500">
@@ -18,10 +47,7 @@ export default function Proj2Home() {
             Guard
           </th>
 
-          <td className="p-3">
-            <ToggleImage image="../src/assets/croque.png" />
-          </td>
-          <td className="p-3">Guard content</td>
+          {guardItems}
         </tr>
 
         <tr id="medic" className="flex border border-blue-200 bg-zinc-600">
@@ -61,9 +87,7 @@ export default function Proj2Home() {
         </tr>
       </table>
 
-      <p className="text-5xl text-center">
-        You have X medic, Y warrior, Z sniper, A specialist in team
-      </p>
+      <p className="text-5xl text-center">You have</p>
       <div className="flex border gap-2 p-2 border-red-800 bg-zinc-800">
         <div>Team member 1</div>
         <div>Team member 2</div>
